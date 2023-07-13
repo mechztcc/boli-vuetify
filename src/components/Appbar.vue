@@ -19,7 +19,7 @@
       </v-col>
       <v-col cols="2" class="d-flex justify-center align-center">
         <h4 class="mx-5">Fazer login</h4>
-        <v-icon>mdi-cart-outline</v-icon>
+        <v-icon size="large">mdi-cart-outline</v-icon>
       </v-col>
     </v-col>
   </v-container>
