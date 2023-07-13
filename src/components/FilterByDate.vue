@@ -1,5 +1,5 @@
 <template>
-  <v-card class="pa-3 rounded-lg">
+  <v-card class="pa-5 rounded-xl">
     <span class="">Data</span>
     <v-text-field label="Selecione o dia" prepend-inner-icon="mdi-calendar" variant="solo" rounded="lg" class="mt-3"></v-text-field>
   </v-card>
