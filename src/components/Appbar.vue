@@ -31,7 +31,7 @@ export default {
 </script>
 <style lang="scss">
 img {
-  width: clamp(40px, 80px, 80px);
-  height: clamp(40px, 80px, 80px);
+  width: clamp(40px, 100px, 100px);
+  height: clamp(40px, 100px, 100px);
 }
 </style>
