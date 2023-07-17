@@ -3,6 +3,15 @@
 
   <v-container>
     <v-row>
+      <v-col cols="4" md="4" lg="4" offset-md="4" offset-lg="4">
+        00 aulas encontradas
+      </v-col>
+      <v-col cols="8" md="4" lg="2" offset-lg="2">
+        <OrderBy />
+      </v-col>
+    </v-row>
+
+    <v-row>
       <v-col cols="12" md="4" lg="4">
         <FilterByDate />
         <FilterByType />
@@ -25,6 +34,7 @@ import FilterByRhitm from "../components/FilterByRhitm.vue";
 import FilterByLevel from "../components/FilterByLevel.vue";
 import FilterByPrice from "../components/FilterByPrice.vue";
 import CardLesson from "../components/CardLesson.vue";
+import OrderBy from "../components/OrderBy.vue";
 export default {
   name: "home-layout",
   components: {
@@ -35,6 +45,7 @@ export default {
     FilterByLevel,
     FilterByPrice,
     CardLesson,
+    OrderBy,
   },
 };
 </script>
