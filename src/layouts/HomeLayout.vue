@@ -1,6 +1,5 @@
 <template>
   <AppBar />
-
   <v-container>
     <v-row>
       <v-col cols="4" md="4" lg="4" offset-md="4" offset-lg="4">
@@ -10,7 +9,6 @@
         <OrderBy />
       </v-col>
     </v-row>
-
     <v-row>
       <v-col cols="12" md="4" lg="4">
         <FilterByDate />
@@ -19,7 +17,6 @@
         <FilterByPrice />
         <FilterByLevel />
       </v-col>
-
       <v-col cols="12" md="8" lg="8">
         <CardLesson />
       </v-col>
