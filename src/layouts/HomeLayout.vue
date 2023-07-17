@@ -4,7 +4,7 @@
   <v-container>
     <v-row>
       <v-col cols="4" md="4" lg="4" offset-md="4" offset-lg="4">
-        00 aulas encontradas
+        <LessonCounter />
       </v-col>
       <v-col cols="8" md="4" lg="2" offset-lg="2">
         <OrderBy />
@@ -35,6 +35,7 @@ import FilterByLevel from "../components/FilterByLevel.vue";
 import FilterByPrice from "../components/FilterByPrice.vue";
 import CardLesson from "../components/CardLesson.vue";
 import OrderBy from "../components/OrderBy.vue";
+import LessonCounter from "../components/LessonCounter.vue";
 export default {
   name: "home-layout",
   components: {
@@ -46,6 +47,7 @@ export default {
     FilterByPrice,
     CardLesson,
     OrderBy,
+    LessonCounter
   },
 };
 </script>
