@@ -1,5 +1,5 @@
 <template>
-  <v-card class="rounded-xl pa-5">
+  <v-card class="rounded-xl pa-5 mt-3">
     <span>Tipo</span>
     <v-checkbox label="Online" color="primary"></v-checkbox>
     <v-checkbox label="Presencial" color="primary"></v-checkbox>

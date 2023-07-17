@@ -1,5 +1,5 @@
 <template>
-  <v-card class="rounded-xl pa-5">
+  <v-card class="rounded-xl pa-5 mt-3">
     <span>Ritmo</span>
 
     <v-text-field label="Procure por modalidade(s) de dança" variant="plain" class="mt-3" rounded="xl"></v-text-field>

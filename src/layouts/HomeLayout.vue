@@ -2,21 +2,19 @@
   <AppBar />
 
   <v-container>
-    <v-col cols="12" md="4" lg="4">
-      <FilterByDate />
-    </v-col>
-    <v-col cols="12" md="4" lg="4">
-      <FilterByType />
-    </v-col>
-    <v-col cols="12" md="4" lg="4">
-      <FilterByRhitm />
-    </v-col>
-    <v-col cols="12" md="4" lg="4">
-      <FilterByPrice />
-    </v-col>
-    <v-col cols="12" md="4" lg="4">
-      <FilterByLevel />
-    </v-col>
+    <v-row>
+      <v-col cols="12" md="4" lg="4">
+        <FilterByDate />
+        <FilterByType />
+        <FilterByRhitm />
+        <FilterByPrice />
+        <FilterByLevel />
+      </v-col>
+
+      <v-col cols="12" md="8" lg="8">
+        <CardLesson />
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 <script lang="ts">
@@ -26,6 +24,7 @@ import FilterByType from "../components/FilterByType.vue";
 import FilterByRhitm from "../components/FilterByRhitm.vue";
 import FilterByLevel from "../components/FilterByLevel.vue";
 import FilterByPrice from "../components/FilterByPrice.vue";
+import CardLesson from "../components/CardLesson.vue";
 export default {
   name: "home-layout",
   components: {
@@ -35,6 +34,7 @@ export default {
     FilterByRhitm,
     FilterByLevel,
     FilterByPrice,
+    CardLesson,
   },
 };
 </script>

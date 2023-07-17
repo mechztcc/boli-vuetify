@@ -1,5 +1,5 @@
 <template>
-  <v-card class="pa-5 rounded-xl">
+  <v-card class="pa-5 rounded-xl mt-3">
     <span>Nível</span>
 
     <v-checkbox class="mt-4" label="Para todos" color="primary"></v-checkbox>

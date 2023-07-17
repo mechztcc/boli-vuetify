@@ -1,10 +1,12 @@
 <template>
-  <v-card class="pa-5 rounded-xl">
+  <v-card class="pa-5 rounded-xl mt-3">
     <span>Preço</span>
 
     <div class="d-flex justify-end align-end">
-      <v-icon color="primary">mdi-hand-coin</v-icon>
-      <h2 class="mx-2">{{ value[1] }}</h2>
+      <v-badge left color="primary" :content="value[1]">
+        <span slot="badge"></span> <!--slot can be any component-->
+        <v-icon large color="primary">mdi-hand-coin</v-icon>
+      </v-badge>
     </div>
     <v-range-slider
       color="primary"
