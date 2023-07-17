@@ -36,6 +36,9 @@ import FilterByPrice from "../components/FilterByPrice.vue";
 import CardLesson from "../components/CardLesson.vue";
 import OrderBy from "../components/OrderBy.vue";
 import LessonCounter from "../components/LessonCounter.vue";
+
+import { useSearchStore } from "../store/search";
+
 export default {
   name: "home-layout",
   components: {
@@ -47,7 +50,22 @@ export default {
     FilterByPrice,
     CardLesson,
     OrderBy,
-    LessonCounter
+    LessonCounter,
+  },
+  data() {
+    return {
+      store: useSearchStore(),
+    };
+  },
+
+  mounted() {
+    console.log(this.store.$state);
+  },
+
+  watch: {
+    store() {
+      console.log(this.store.credit);
+    },
   },
 };
 </script>
