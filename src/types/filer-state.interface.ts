@@ -4,9 +4,9 @@ export interface IFilterState {
   day: string;
   district: string;
   level: number[];
-  local: false;
   modality: number[];
-  online: false;
+  local: boolean;
+  online: boolean;
   teacherName: string;
   weekDay: string[];
 }

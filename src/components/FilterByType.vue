@@ -1,8 +1,16 @@
 <template>
   <v-card class="rounded-xl pa-5 mt-3">
     <span>Tipo</span>
-    <v-checkbox label="Online" color="primary"></v-checkbox>
-    <v-checkbox label="Presencial" color="primary"></v-checkbox>
+    <v-checkbox
+      label="Online"
+      color="primary"
+      v-model="status.online"
+    ></v-checkbox>
+    <v-checkbox
+      label="Presencial"
+      color="primary"
+      v-model="status.local"
+    ></v-checkbox>
 
     <v-text-field
       label="Insira seu endereço"
@@ -12,23 +20,30 @@
   </v-card>
 </template>
 <script lang="ts">
+import { useSearchStore } from "../store/search";
 export default {
   name: "filter-by-type-component",
   data() {
     return {
-      info: "Tik",
+      store: useSearchStore(),
+      status: {
+        online: true,
+        local: false,
+      },
     };
   },
 
-  mounted() {
-    setTimeout(() => {
-      this.info = `${this.info} Tak`;
-    }, 3000);
-  },
-
   watch: {
-    info() {
-      console.log(this.info);
+    status: {
+      handler: function () {
+        const state = this.store.$state;
+        this.store.$state = {
+          ...state,
+          online: this.status.online,
+          local: this.status.local,
+        };
+      },
+      deep: true,
     },
   },
 };
