@@ -2,11 +2,15 @@
   <v-card class="rounded-xl pa-5 mt-3">
     <span>Ritmo</span>
 
+    <br />
     <v-btn
-      color="success"
-      v-for="(item, index) in store.$state.modality"
+      rounded="xl"
+      size="small"
+      class="text-white mt-3 mx-1"
+      v-for="(item, index) in rhitms"
       :key="index"
-      >{{ item }}</v-btn
+      @click="onClick(item)"
+      >{{ item.name }}</v-btn
     >
 
     <v-text-field
@@ -15,9 +19,12 @@
       class="mt-3"
       rounded="xl"
       v-model="search"
+      append-inner-icon="mdi-close-circle"
+      @click:append-inner="filtered = []"
     ></v-text-field>
 
     <v-btn
+      class="ma-1"
       variant="tonal"
       v-for="(item, index) in filtered"
       :key="index"
@@ -40,6 +47,7 @@ export default {
       search: "",
       filtered: [] as IModality[],
       modalities: [] as IModality[],
+      rhitms: [] as IModality[],
     };
   },
 
@@ -53,9 +61,14 @@ export default {
 
       if (!storeModalities.includes(item.id)) {
         storeModalities.push(item.id);
+        this.rhitms.push(item);
       } else if (storeModalities.includes(item.id)) {
         storeModalities = storeModalities.filter((el) => {
           return el !== item.id;
+        });
+
+        this.rhitms = this.rhitms.filter((el) => {
+          return el.id !== item.id;
         });
       }
 
@@ -64,7 +77,6 @@ export default {
         modality: storeModalities,
       };
       this.store.addNewState(state);
-      console.log(this.store.$state);
     },
   },
 
