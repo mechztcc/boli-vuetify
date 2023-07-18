@@ -18,7 +18,7 @@
         <FilterByLevel />
       </v-col>
       <v-col cols="12" md="8" lg="8">
-        <CardLesson v-for="(item, index) in data" :key="index" />
+        <CardLesson v-for="(item, index) in data" :key="index" :info="item" />
       </v-col>
     </v-row>
   </v-container>
