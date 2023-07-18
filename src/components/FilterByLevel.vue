@@ -38,6 +38,7 @@ export default {
       store: useSearchStore(),
     };
   },
+
   methods: {
     onSelectLevel(value: number) {
       if (this.store.$state.level.includes(value)) {

@@ -35,6 +35,8 @@ import OrderBy from "../components/OrderBy.vue";
 import LessonCounter from "../components/LessonCounter.vue";
 
 import { useSearchStore } from "../store/search";
+import { useHomeStore } from "../store/home";
+import { search } from "../services/http.service";
 
 export default {
   name: "home-layout",
@@ -52,11 +54,14 @@ export default {
   data() {
     return {
       store: useSearchStore(),
+      storeHome: useHomeStore(),
     };
   },
 
   mounted() {
-    console.log(this.store.$state);
+    this.store.$subscribe((mutation, state) => {
+      search(state).then((data) => (this.storeHome.$state = data));
+    });
   },
 
   watch: {

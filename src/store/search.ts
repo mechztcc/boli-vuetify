@@ -7,7 +7,7 @@ export const useSearchStore = defineStore("search", {
     ({
       city: "",
       credit: 0,
-      day: "",
+      day: "0000-00-00",
       district: "",
       level: [],
       local: false,
