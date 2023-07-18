@@ -9,5 +9,9 @@ export const useHomeStore = defineStore("home", {
     addNewState(state: ILesson[]) {
       this.$state.data = state;
     },
+
+    reverseData() {
+      this.data = this.data.reverse();
+    },
   },
 });
