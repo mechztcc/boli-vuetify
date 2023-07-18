@@ -1,5 +1,5 @@
 <template>
-  <v-card rounded="xl">
+  <v-card rounded="xl" class="mt-3">
     <v-container>
       <v-row>
         <v-col cols="12" md="12" lg="5">

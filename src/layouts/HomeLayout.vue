@@ -18,7 +18,7 @@
         <FilterByLevel />
       </v-col>
       <v-col cols="12" md="8" lg="8">
-        <CardLesson />
+        <CardLesson v-for="(item, index) in data" :key="index" />
       </v-col>
     </v-row>
   </v-container>
@@ -37,6 +37,7 @@ import LessonCounter from "../components/LessonCounter.vue";
 import { useSearchStore } from "../store/search";
 import { useHomeStore } from "../store/home";
 import { search } from "../services/http.service";
+import { mapState } from "pinia";
 
 export default {
   name: "home-layout",
@@ -55,20 +56,21 @@ export default {
     return {
       store: useSearchStore(),
       storeHome: useHomeStore(),
+      items: [],
     };
   },
 
   mounted() {
     this.store.$subscribe((mutation, state) => {
-      search(state).then((data) => (this.storeHome.$state = data));
+      search(state).then((data) => (this.storeHome.$state.data = data));
     });
   },
 
-  watch: {
-    store() {
-      console.log(this.store.credit);
-    },
+  computed: {
+    ...mapState(useHomeStore, ["data"]),
   },
+
+  watch: {},
 };
 </script>
 <style lang=""></style>
