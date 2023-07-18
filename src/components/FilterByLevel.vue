@@ -1,5 +1,5 @@
 <template>
-  <v-card class="pa-5 rounded-xl mt-3">
+  <v-card class="pa-5 rounded-xl mt-3 fadeIn">
     <span>Nível</span>
 
     <v-checkbox

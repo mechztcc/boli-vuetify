@@ -5,6 +5,7 @@
     label="Ordernar por"
     variant="solo"
     @update:model-value="reverseData()"
+    class="fadeIn"
   ></v-select>
 </template>
 <script lang="ts">

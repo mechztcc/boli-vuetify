@@ -1,5 +1,5 @@
 <template>
-  <v-container fluid class="ma-0 pa-0">
+  <v-container fluid class="ma-0 pa-0 fadeIn">
     <v-col cols="12" class="d-flex justify-space-between pa-0">
       <v-col cols="2" md="2" class="d-flex justify-center align-center">
         <img src="@/assets/Logo.svg" alt="" />

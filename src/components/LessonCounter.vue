@@ -1,5 +1,5 @@
 <template>
-  <div class="d-flex align-center h-100">
+  <div class="d-flex align-center h-100 fadeIn">
     <span>{{ data.length }} Aulas encontradas</span>
   </div>
 </template>

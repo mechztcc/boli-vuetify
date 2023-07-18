@@ -1,5 +1,5 @@
 <template>
-  <v-card class="pa-5 rounded-xl">
+  <v-card class="pa-5 rounded-xl fadeIn">
     <span class="">Data</span>
     <v-text-field
       label="Selecione o dia"

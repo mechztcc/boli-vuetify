@@ -1,5 +1,5 @@
 <template>
-  <v-card class="pa-5 rounded-xl mt-3">
+  <v-card class="pa-5 rounded-xl mt-3 fadeIn">
     <span>Preço</span>
     <div class="d-flex justify-end align-end">
       <v-badge left color="primary" :content="value[1]">

@@ -1,5 +1,5 @@
 <template>
-  <v-card class="rounded-xl pa-5 mt-3">
+  <v-card class="rounded-xl pa-5 mt-3 fadeIn">
     <span>Ritmo</span>
 
     <br />
