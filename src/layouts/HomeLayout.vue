@@ -17,8 +17,17 @@
         <FilterByPrice />
         <FilterByLevel />
       </v-col>
-      <v-col cols="12" md="8" lg="8">
+      <v-col cols="12" md="8" lg="8" v-if="!isLoading">
         <CardLesson v-for="(item, index) in data" :key="index" :info="item" />
+      </v-col>
+      <v-col cols="12" md="8" lg="8" v-if="isLoading">
+        <div class="d-flex h-100 justify-center align-center">
+          <v-progress-circular
+            color="primary"
+            indeterminate
+            :size="36"
+          ></v-progress-circular>
+        </div>
       </v-col>
     </v-row>
   </v-container>
@@ -57,12 +66,16 @@ export default {
       store: useSearchStore(),
       storeHome: useHomeStore(),
       items: [],
+      isLoading: false,
     };
   },
 
   mounted() {
     this.store.$subscribe((mutation, state) => {
-      search(state).then((data) => (this.storeHome.$state.data = data));
+      this.isLoading = true;
+      search(state)
+        .then((data) => (this.storeHome.$state.data = data))
+        .finally(() => (this.isLoading = false));
     });
   },
 
