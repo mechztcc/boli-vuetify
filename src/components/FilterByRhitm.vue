@@ -20,7 +20,10 @@
       rounded="xl"
       v-model="search"
       append-inner-icon="mdi-close-circle"
-      @click:append-inner="filtered = []"
+      @click:append-inner="
+        filtered = [];
+        search = '';
+      "
     ></v-text-field>
 
     <v-btn

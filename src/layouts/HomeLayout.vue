@@ -17,16 +17,20 @@
         <FilterByPrice />
         <FilterByLevel />
       </v-col>
-      <v-col cols="12" md="8" lg="8" v-if="!isLoading">
-        <CardLesson v-for="(item, index) in data" :key="index" :info="item" />
+      <v-col cols="12" md="8" lg="8" v-if="!isLoading && data.length > 0">
+        <CardLesson v-for="(item, index) in paginate" :key="index" :info="item" />
+        <v-pagination :length="data.length / itemsPerPage"></v-pagination>
       </v-col>
       <v-col cols="12" md="8" lg="8" v-if="isLoading">
         <div class="d-flex h-100 justify-center align-center">
-          <v-progress-circular
-            color="primary"
-            indeterminate
-            :size="36"
-          ></v-progress-circular>
+          <div class="d-flex flex-column align-center">
+            <v-progress-circular
+              color="primary"
+              indeterminate
+              :size="36"
+            ></v-progress-circular>
+            <span>Buscando informações...</span>
+          </div>
         </div>
       </v-col>
     </v-row>
@@ -66,6 +70,7 @@ export default {
       store: useSearchStore(),
       storeHome: useHomeStore(),
       items: [],
+      itemsPerPage: 5,
       isLoading: false,
     };
   },
@@ -81,6 +86,9 @@ export default {
 
   computed: {
     ...mapState(useHomeStore, ["data"]),
+    paginate() {
+      return this.data.slice(0, this.itemsPerPage - 1);
+    },
   },
 
   watch: {},

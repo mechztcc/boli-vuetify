@@ -12,7 +12,7 @@
                 >{{ info?.inicialTime }} {{ info?.finalTime }}</small
               >
               <span>{{ info?.teacherName }}</span>
-              <span class="text-secondary">@{{ info?.teacherNickname }}</span>
+              <span class="text-secondary" v-if="info?.teacherNickname">@{{ info?.teacherNickname }}</span>
             </div>
           </div>
         </v-col>
