@@ -13,8 +13,9 @@ import { createApp } from "vue";
 // Plugins
 import { registerPlugins } from "@/plugins";
 import axios from "axios";
+import VueDatePicker from '@vuepic/vue-datepicker';
 
-const app = createApp(App);
+const app = createApp(App).component("VueDatePicker", VueDatePicker);
 
 registerPlugins(app);
 

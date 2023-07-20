@@ -1,15 +1,15 @@
 <template>
-  <v-card class="pa-5 rounded-xl fadeIn">
-    <span class="">Data</span>
-    <v-text-field
-      label="Selecione o dia"
-      prepend-inner-icon="mdi-calendar"
-      variant="solo"
-      rounded="xl"
-      class="mt-3"
-      v-model.trim="date"
-    ></v-text-field>
-  </v-card>
+  <div
+    class="d-flex flex-column pa-5 bg-white rounded-xl shadow-lg elevation-1"
+  >
+    <span class="mb-2">Data</span>
+    <VueDatePicker
+      v-model="date"
+      locale="pt-BR"
+      :enable-time-picker="false"
+      auto-apply
+    ></VueDatePicker>
+  </div>
 </template>
 <script lang="ts">
 import { useSearchStore } from "../store/search";
@@ -19,7 +19,7 @@ export default {
   name: "filter-by-date-component",
   data() {
     return {
-      date: new Date().toLocaleDateString(),
+      date: '0000-00-00',
       store: useSearchStore(),
     };
   },
@@ -27,15 +27,14 @@ export default {
   computed: {},
   watch: {
     date() {
-      if (this.date.length == 8) {
-        this.date = addMaskDate(this.date);
 
-        const state = this.store.$state;
-        this.store.$state = {
-          ...state,
-          day: reverseDate(this.date),
-        };
-      }
+      const date = new Date(this.date).toLocaleDateString();
+
+      const state = this.store.$state;
+      this.store.$state = {
+        ...state,
+        day: reverseDate(date),
+      };
     },
   },
 };

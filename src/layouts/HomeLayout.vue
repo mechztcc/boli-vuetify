@@ -82,6 +82,7 @@ export default {
       page: 1,
       filtered: [] as ILesson[],
       isLoading: false,
+      date: null,
     };
   },
 
