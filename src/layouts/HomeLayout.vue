@@ -97,6 +97,8 @@ export default {
         )
         .finally(() => (this.isLoading = false));
     });
+
+    this.onDefaultSearch();
   },
 
   computed: {
@@ -104,11 +106,22 @@ export default {
   },
 
   methods: {
+    onDefaultSearch() {
+      const state = { ...this.store.$state, online: true };
+      this.isLoading = true;
+      search(state)
+        .then(
+          (data) => (
+            (this.storeHome.$state.data = data),
+            (this.filtered = data?.slice(0, this.itemsPerPage))
+          )
+        )
+        .finally(() => (this.isLoading = false));
+    },
     paginate() {
       const offset = this.page * this.itemsPerPage - this.page;
       this.filtered = this.data.slice(offset, offset + this.itemsPerPage);
     },
-
   },
 
   watch: {},
