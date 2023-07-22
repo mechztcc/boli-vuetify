@@ -18,7 +18,7 @@
         ></v-text-field>
       </v-col>
       <v-col cols="2" class="d-flex justify-center align-center">
-        <h4 class="mx-5">Fazer login</h4>
+        <h4 class="mx-5" @click="navigate()">Fazer login</h4>
         <v-icon size="large">mdi-cart-outline</v-icon>
       </v-col>
     </v-col>
@@ -27,6 +27,11 @@
 <script lang="ts">
 export default {
   name: "appbar-component",
+  methods: {
+    navigate() {
+      this.$router.push("login");
+    },
+  },
 };
 </script>
 <style lang="scss">
