@@ -18,7 +18,7 @@
         ></v-text-field>
       </v-col>
       <v-col cols="2" class="d-flex justify-center align-center">
-        <h4 class="mx-5" @click="navigate()">Fazer login</h4>
+        <h4 class="mx-5 pointer" @click="navigate()">Fazer login</h4>
         <v-icon size="large">mdi-cart-outline</v-icon>
       </v-col>
     </v-col>
@@ -35,6 +35,9 @@ export default {
 };
 </script>
 <style lang="scss">
+.pointer {
+  cursor: pointer;
+}
 img {
   width: clamp(40px, 100px, 100px);
   height: clamp(40px, 100px, 100px);

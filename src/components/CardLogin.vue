@@ -33,7 +33,9 @@
               Ao continuar, você concorda com o Termos de serviço da Boli e
               Políticas de privacidade.
             </span>
-            <span class="mt-3"> Não possui uma conta? Cadastre-se </span>
+            <span class="mt-3">
+              Não possui uma conta? <b class="text-primary">Cadastre-se</b>
+            </span>
           </div>
 
           <v-btn
