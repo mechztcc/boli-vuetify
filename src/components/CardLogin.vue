@@ -72,6 +72,10 @@ export default {
     };
   },
 
+  mounted() {
+    document.title = "Login";
+  },
+
   methods: {
     async validateForm() {
       const { valid } = await (this.$refs as any).form.validate();
