@@ -87,6 +87,7 @@ export default {
   },
 
   mounted() {
+    document.title = 'Buscar aulas'
     this.store.$subscribe((mutation, state) => {
       this.isLoading = true;
       search(state)
