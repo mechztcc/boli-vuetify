@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white">
+  <div class="bg-white fadeIn">
     <v-container class="">
       <v-col cols="12" md="6" lg="6" offset-md="3">
         <CardCreateAccount />
