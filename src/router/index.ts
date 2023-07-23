@@ -12,6 +12,11 @@ const routes = [
     name: "login",
     component: () => import("@/layouts/LoginLayout.vue"),
   },
+  {
+    path: "/create-account",
+    name: "create-account",
+    component: () => import("@/layouts/CreateAccountLayout.vue"),
+  },
 ];
 
 const router = createRouter({

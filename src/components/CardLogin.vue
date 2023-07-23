@@ -34,7 +34,8 @@
               Políticas de privacidade.
             </span>
             <span class="mt-3">
-              Não possui uma conta? <b class="text-primary">Cadastre-se</b>
+              Não possui uma conta?
+              <b class="text-primary pointer" @click="navigate()">Cadastre-se</b>
             </span>
           </div>
 
@@ -77,6 +78,9 @@ export default {
   },
 
   methods: {
+    navigate() {
+      this.$router.push({ name: "create-account" });
+    },
     async validateForm() {
       const { valid } = await (this.$refs as any).form.validate();
       if (!valid) {
