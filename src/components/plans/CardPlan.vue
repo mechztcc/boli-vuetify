@@ -13,7 +13,7 @@
     <hr class="mt-3" />
 
     <div class="d-flex align-end mt-5">
-      <v-icon color="primary">mdi-hand-coin</v-icon>
+      <v-icon color="success">mdi-check-circle</v-icon>
       <span class="mx-2">{{ info?.credit }} Créditos por mês</span>
     </div>
 
