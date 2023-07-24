@@ -31,3 +31,9 @@ export async function createAccount(payload: ICreateAccount): Promise<any> {
       console.log(err);
     });
 }
+
+export async function findPlans(): Promise<any> {
+  return await axios.get<any>(`${api}/payment/plans-available`).catch((err) => {
+    console.log(err);
+  });
+}

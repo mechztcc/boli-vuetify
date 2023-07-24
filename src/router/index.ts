@@ -17,6 +17,11 @@ const routes = [
     name: "create-account",
     component: () => import("@/layouts/CreateAccountLayout.vue"),
   },
+  {
+    path: "/plans",
+    name: "plans",
+    component: () => import("@/layouts/PlansLayout.vue"),
+  },
 ];
 
 const router = createRouter({

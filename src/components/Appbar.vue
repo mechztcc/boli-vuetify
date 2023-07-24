@@ -18,7 +18,10 @@
         ></v-text-field>
       </v-col>
       <v-col cols="2" class="d-flex justify-center align-center">
-        <h4 class="mx-5 pointer" @click="navigate()">Fazer login</h4>
+        <h4 class="mx-5 pointer" @click="navigate()" v-if="!hasToken()">
+          Fazer login
+        </h4>
+        <v-icon size="large" class="mx-2 pointer" @click="navigate()" v-if="hasToken()">mdi-account</v-icon>
         <v-icon size="large">mdi-cart-outline</v-icon>
       </v-col>
     </v-col>
@@ -30,6 +33,9 @@ export default {
   methods: {
     navigate() {
       this.$router.push("login");
+    },
+    hasToken() {
+      return localStorage.getItem("token");
     },
   },
 };
