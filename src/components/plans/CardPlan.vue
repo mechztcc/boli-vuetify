@@ -1,6 +1,6 @@
 <template>
   <v-card class="pa-7 rounded-lg">
-    <h1>{{ info?.name }}</h1>
+    <h1 class="text-primary">{{ info?.name }}</h1>
     <span>O melhor plano para começar sua jornada</span>
 
     <div class="d-flex mt-4">
@@ -23,9 +23,9 @@
   </v-card>
 </template>
 <script lang="ts">
-import { IPlan } from "../../types/plan.interface";
 export default {
   name: "card-plan-component",
+  components: {},
   props: ["info"],
   data() {
     return {};
