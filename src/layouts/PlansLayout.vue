@@ -1,17 +1,19 @@
 <template>
-  <v-container>
-    <v-row>
-      <v-col
-        cols="12"
-        md="6"
-        lg="4"
-        v-for="(item, index) in items"
-        :key="index"
-      >
-        <CardPlan :info="item"/>
-      </v-col>
-    </v-row>
-  </v-container>
+  <div class="bg-white">
+    <v-container>
+      <v-row>
+        <v-col
+          cols="12"
+          md="6"
+          lg="4"
+          v-for="(item, index) in items"
+          :key="index"
+        >
+          <CardPlan :info="item" />
+        </v-col>
+      </v-row>
+    </v-container>
+  </div>
 </template>
 <script lang="ts">
 import CardPlan from "../components/plans/CardPlan.vue";
